@@ -1,5 +1,9 @@
 # Bayesian optimization for non-vectorial data
 
+## problem setting
+
+## how to use
+
 ## example
 ```python
 import numpy as np
