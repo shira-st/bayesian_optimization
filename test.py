@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[4]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 from BayesianOptimization import BayesianOptimization
@@ -30,10 +24,3 @@ plt.title("best observation")
 plt.xlabel("iteration")
 plt.ylabel("y")
 plt.show()
-
-
-# In[ ]:
-
-
-
-
