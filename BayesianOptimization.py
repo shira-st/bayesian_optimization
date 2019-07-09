@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[9]:
-
-
 import numpy as np
 from sklearn.gaussian_process import kernels
 from sklearn.gaussian_process.kernels import WhiteKernel
@@ -79,10 +73,3 @@ class BayesianOptimization:
             self.result = np.append(self.result, t_best)
         
         return
-
-
-# In[ ]:
-
-
-
-
