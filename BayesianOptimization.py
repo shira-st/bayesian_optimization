@@ -26,10 +26,10 @@ class PrecomputedKernel(Kernel):
 
 
 class BayesianOptimization:
-    def __init__(self, objective, kernel, initial_size=10, seed=0, noise_level=1e-10):
+    def __init__(self, objective, kernel, initial_size=10, noise_level=1e-10):
         self.data_size = len(kernel)
         self.initial_size = initial_size
-        self.initial, self.rest = self.split(seed)
+        self.initial, self.rest = self.split()
         self.objective = objective
         self.kernel = PrecomputedKernel(kernel) + WhiteKernel(noise_level)
         self.best = np.min([self.objective.f(i) for i in range(self.data_size)])
@@ -37,9 +37,8 @@ class BayesianOptimization:
         self.acq = gaussian_ei
 
     # split indices into the indices for initial evaluation and the rest
-    def split(self, seed):
+    def split(self):
         indices = np.array(range(self.data_size))
-        np.random.seed(seed)
         np.random.shuffle(indices)
         return np.split(indices, [self.initial_size])
 
